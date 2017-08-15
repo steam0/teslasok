@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <!--<base href="/" /> et av tre steg for å få fin url-->
+  <title>Teslanytt</title>
+
+  <!-- CSS -->
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!--Angularjs-->
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-route/angular-route.js"></script>
+  <script src="node_modules/angular-resource/angular-resource.js"></script>
+  <script src="node_modules/angular-animate/angular-animate.js"></script>
+  <script src="node_modules/angular-sanitize/angular-sanitize.js"></script>
+  <script src="node_modules/angular-cookies/angular-cookies.js"></script>
+  <script src="node_modules/angular-environment/dist/angular-environment.js"></script>
+
+  <!--Boostrap-->
+  <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+  <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+
+  <!-- App -->
+  <script src="js/app.js"></script>
+  <script src="js/appRun.js"></script>
+  <script src="js/appRoutesConfig.js"></script>
+
+  <!-- Services -->
+  <script src="js/services/TeslaService.js"></script>
+
+  <!-- Controllers -->
+  <script src="js/controllers/HjemController.js"></script>
+
+  <!-- Directives -->
+  <script src="js/directives/formatString.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.6.3/angular-locale_nb-no.js"></script>
+  <meta name="viewport" content="width=device-width"/>
+
+</head>
+<body>
+  <main ng-view> </main>
+</body>
+</html>

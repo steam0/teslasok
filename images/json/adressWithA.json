@@ -1,0 +1,1086 @@
+[
+  {
+    "id": 1,
+    "adressenavn": "A.C. Svarstads gate"
+  },
+  {
+    "id": 2,
+    "adressenavn": "Aamodtalleen"
+  },
+  {
+    "id": 3,
+    "adressenavn": "Aamodthellinga"
+  },
+  {
+    "id": 4,
+    "adressenavn": "Aamodtterrassen"
+  },
+  {
+    "id": 5,
+    "adressenavn": "Aas gård"
+  },
+  {
+    "id": 6,
+    "adressenavn": "Aasgaardvegen"
+  },
+  {
+    "id": 7,
+    "adressenavn": "Aasmund Vinjes vei"
+  },
+  {
+    "id": 8,
+    "adressenavn": "Abborveien"
+  },
+  {
+    "id": 9,
+    "adressenavn": "Abel Bergstrøms vei"
+  },
+  {
+    "id": 10,
+    "adressenavn": "Adolph Tidemands gate"
+  },
+  {
+    "id": 11,
+    "adressenavn": "Agnorstubben"
+  },
+  {
+    "id": 12,
+    "adressenavn": "Agnorveien"
+  },
+  {
+    "id": 13,
+    "adressenavn": "Akershusveien"
+  },
+  {
+    "id": 14,
+    "adressenavn": "Aksel Aamodts vei"
+  },
+  {
+    "id": 15,
+    "adressenavn": "Aksel Bråtens veg"
+  },
+  {
+    "id": 16,
+    "adressenavn": "Aktivitetsvegen"
+  },
+  {
+    "id": 17,
+    "adressenavn": "Alex Olssons vei"
+  },
+  {
+    "id": 18,
+    "adressenavn": "Alexander Kiellands gate"
+  },
+  {
+    "id": 19,
+    "adressenavn": "Alexander Kiellands vei"
+  },
+  {
+    "id": 20,
+    "adressenavn": "Alexander Langes vei"
+  },
+  {
+    "id": 21,
+    "adressenavn": "Alf Kristoffersens vei"
+  },
+  {
+    "id": 22,
+    "adressenavn": "Alf Prøysens vei"
+  },
+  {
+    "id": 23,
+    "adressenavn": "Alfheim"
+  },
+  {
+    "id": 24,
+    "adressenavn": "Alfheimveien"
+  },
+  {
+    "id": 25,
+    "adressenavn": "Alfred Myrens veg"
+  },
+  {
+    "id": 26,
+    "adressenavn": "Algarheimsvegen"
+  },
+  {
+    "id": 27,
+    "adressenavn": "Alicenborgveien"
+  },
+  {
+    "id": 28,
+    "adressenavn": "Alingsåsveien"
+  },
+  {
+    "id": 29,
+    "adressenavn": "Allergotvegen"
+  },
+  {
+    "id": 30,
+    "adressenavn": "Allevegen"
+  },
+  {
+    "id": 31,
+    "adressenavn": "Almedalsveien"
+  },
+  {
+    "id": 32,
+    "adressenavn": "Almelien"
+  },
+  {
+    "id": 33,
+    "adressenavn": "Almelivegen"
+  },
+  {
+    "id": 34,
+    "adressenavn": "Almenningen"
+  },
+  {
+    "id": 35,
+    "adressenavn": "Almenningsvegen"
+  },
+  {
+    "id": 36,
+    "adressenavn": "Almenningsveien"
+  },
+  {
+    "id": 37,
+    "adressenavn": "Almeveien"
+  },
+  {
+    "id": 38,
+    "adressenavn": "Almvegen"
+  },
+  {
+    "id": 39,
+    "adressenavn": "Almveien"
+  },
+  {
+    "id": 40,
+    "adressenavn": "Alnavegen"
+  },
+  {
+    "id": 41,
+    "adressenavn": "Alnesvegen"
+  },
+  {
+    "id": 42,
+    "adressenavn": "Alvestigen"
+  },
+  {
+    "id": 43,
+    "adressenavn": "Alvetunet"
+  },
+  {
+    "id": 44,
+    "adressenavn": "Alværnbukta"
+  },
+  {
+    "id": 45,
+    "adressenavn": "Alværnkroken"
+  },
+  {
+    "id": 46,
+    "adressenavn": "Alværnlia"
+  },
+  {
+    "id": 47,
+    "adressenavn": "Alværnveien"
+  },
+  {
+    "id": 48,
+    "adressenavn": "Amund Hellands gate"
+  },
+  {
+    "id": 49,
+    "adressenavn": "Amundalsvegen"
+  },
+  {
+    "id": 50,
+    "adressenavn": "Amundrudbakken"
+  },
+  {
+    "id": 51,
+    "adressenavn": "Amundrudhøgda"
+  },
+  {
+    "id": 52,
+    "adressenavn": "Amundrudvegen"
+  },
+  {
+    "id": 53,
+    "adressenavn": "Amunds vei"
+  },
+  {
+    "id": 54,
+    "adressenavn": "Andelvvegen"
+  },
+  {
+    "id": 55,
+    "adressenavn": "Anders Mørchs vei"
+  },
+  {
+    "id": 56,
+    "adressenavn": "Andersdammen"
+  },
+  {
+    "id": 57,
+    "adressenavn": "Andersrudveien"
+  },
+  {
+    "id": 58,
+    "adressenavn": "Andorstuvegen"
+  },
+  {
+    "id": 59,
+    "adressenavn": "Andrenbakken"
+  },
+  {
+    "id": 60,
+    "adressenavn": "Andrine Trulsruds vei"
+  },
+  {
+    "id": 61,
+    "adressenavn": "Angellstien"
+  },
+  {
+    "id": 62,
+    "adressenavn": "Angerstveien"
+  },
+  {
+    "id": 63,
+    "adressenavn": "Ankersvingen"
+  },
+  {
+    "id": 64,
+    "adressenavn": "Ankerveien"
+  },
+  {
+    "id": 65,
+    "adressenavn": "Anna Bøes vei"
+  },
+  {
+    "id": 66,
+    "adressenavn": "Anna Cathrines vei"
+  },
+  {
+    "id": 67,
+    "adressenavn": "Anna Kreftings vei"
+  },
+  {
+    "id": 68,
+    "adressenavn": "Anna Willersruds veg"
+  },
+  {
+    "id": 69,
+    "adressenavn": "Annikveien"
+  },
+  {
+    "id": 70,
+    "adressenavn": "Anolitveien"
+  },
+  {
+    "id": 71,
+    "adressenavn": "Anthon Walles vei"
+  },
+  {
+    "id": 72,
+    "adressenavn": "Anton Nilsens Veg"
+  },
+  {
+    "id": 73,
+    "adressenavn": "Anton Nilsens tun"
+  },
+  {
+    "id": 74,
+    "adressenavn": "Anton Nilsens veg"
+  },
+  {
+    "id": 75,
+    "adressenavn": "Anton Thoresens vei"
+  },
+  {
+    "id": 76,
+    "adressenavn": "Anton Tschudis vei"
+  },
+  {
+    "id": 77,
+    "adressenavn": "Apalstien"
+  },
+  {
+    "id": 78,
+    "adressenavn": "Apalveien"
+  },
+  {
+    "id": 79,
+    "adressenavn": "Arboretveien"
+  },
+  {
+    "id": 80,
+    "adressenavn": "Are Frodes vei"
+  },
+  {
+    "id": 81,
+    "adressenavn": "Ares vei"
+  },
+  {
+    "id": 82,
+    "adressenavn": "Arne Ekelands veg"
+  },
+  {
+    "id": 83,
+    "adressenavn": "Arne Garborgs gate"
+  },
+  {
+    "id": 84,
+    "adressenavn": "Arne Garborgs vei"
+  },
+  {
+    "id": 85,
+    "adressenavn": "Arne Høilands vei"
+  },
+  {
+    "id": 86,
+    "adressenavn": "Arne Ulstrups vei"
+  },
+  {
+    "id": 87,
+    "adressenavn": "Arneborgveien"
+  },
+  {
+    "id": 88,
+    "adressenavn": "Arnesbakken"
+  },
+  {
+    "id": 89,
+    "adressenavn": "Arnesenga"
+  },
+  {
+    "id": 90,
+    "adressenavn": "Arnestadjordet"
+  },
+  {
+    "id": 91,
+    "adressenavn": "Arnestadsvingen"
+  },
+  {
+    "id": 92,
+    "adressenavn": "Arnestadveien"
+  },
+  {
+    "id": 93,
+    "adressenavn": "Arnold Haukelands plass"
+  },
+  {
+    "id": 94,
+    "adressenavn": "Arnstein Arnebergs vei"
+  },
+  {
+    "id": 95,
+    "adressenavn": "Arons vei"
+  },
+  {
+    "id": 96,
+    "adressenavn": "Arteidvegen"
+  },
+  {
+    "id": 97,
+    "adressenavn": "Artilleristubben"
+  },
+  {
+    "id": 98,
+    "adressenavn": "Artilleriveien"
+  },
+  {
+    "id": 99,
+    "adressenavn": "Arverudstien"
+  },
+  {
+    "id": 100,
+    "adressenavn": "Arvid Andresens vei"
+  },
+  {
+    "id": 101,
+    "adressenavn": "Asak Kirkevei"
+  },
+  {
+    "id": 102,
+    "adressenavn": "Asakkollen"
+  },
+  {
+    "id": 103,
+    "adressenavn": "Asakmoen"
+  },
+  {
+    "id": 104,
+    "adressenavn": "Asaktoppen"
+  },
+  {
+    "id": 105,
+    "adressenavn": "Asakvegen"
+  },
+  {
+    "id": 106,
+    "adressenavn": "Asakveien"
+  },
+  {
+    "id": 107,
+    "adressenavn": "Asavegen"
+  },
+  {
+    "id": 108,
+    "adressenavn": "Asaveien"
+  },
+  {
+    "id": 109,
+    "adressenavn": "Asbjørn Dørumsgards v."
+  },
+  {
+    "id": 110,
+    "adressenavn": "Asbjørn Klosters vei"
+  },
+  {
+    "id": 111,
+    "adressenavn": "Asbjørnsens vei"
+  },
+  {
+    "id": 112,
+    "adressenavn": "Asfaltvegen"
+  },
+  {
+    "id": 113,
+    "adressenavn": "Asgerds vei"
+  },
+  {
+    "id": 114,
+    "adressenavn": "Ask"
+  },
+  {
+    "id": 115,
+    "adressenavn": "Askehaugveien"
+  },
+  {
+    "id": 116,
+    "adressenavn": "Askehaugåsen"
+  },
+  {
+    "id": 117,
+    "adressenavn": "Askeladdvegen"
+  },
+  {
+    "id": 118,
+    "adressenavn": "Askeladdveien"
+  },
+  {
+    "id": 119,
+    "adressenavn": "Asker terrasse"
+  },
+  {
+    "id": 120,
+    "adressenavn": "Askerbrubakken"
+  },
+  {
+    "id": 121,
+    "adressenavn": "Askerjordet"
+  },
+  {
+    "id": 122,
+    "adressenavn": "Askerudvegen"
+  },
+  {
+    "id": 123,
+    "adressenavn": "Askervangen"
+  },
+  {
+    "id": 124,
+    "adressenavn": "Askerveien"
+  },
+  {
+    "id": 125,
+    "adressenavn": "Askeveien"
+  },
+  {
+    "id": 126,
+    "adressenavn": "Askheim"
+  },
+  {
+    "id": 127,
+    "adressenavn": "Askheimtunet"
+  },
+  {
+    "id": 128,
+    "adressenavn": "Askheimvegen"
+  },
+  {
+    "id": 129,
+    "adressenavn": "Askhøgda"
+  },
+  {
+    "id": 130,
+    "adressenavn": "Askimveien"
+  },
+  {
+    "id": 131,
+    "adressenavn": "Askliveien"
+  },
+  {
+    "id": 132,
+    "adressenavn": "Asktorvet"
+  },
+  {
+    "id": 133,
+    "adressenavn": "Askveien"
+  },
+  {
+    "id": 134,
+    "adressenavn": "Askåsen"
+  },
+  {
+    "id": 135,
+    "adressenavn": "Asmyrgata"
+  },
+  {
+    "id": 136,
+    "adressenavn": "Asmyrsvingen"
+  },
+  {
+    "id": 137,
+    "adressenavn": "Aspelundfaret"
+  },
+  {
+    "id": 138,
+    "adressenavn": "Aspelundveien"
+  },
+  {
+    "id": 139,
+    "adressenavn": "Aspertunet"
+  },
+  {
+    "id": 140,
+    "adressenavn": "Asperudveien"
+  },
+  {
+    "id": 141,
+    "adressenavn": "Aspervegen"
+  },
+  {
+    "id": 142,
+    "adressenavn": "Aspeveien"
+  },
+  {
+    "id": 143,
+    "adressenavn": "Assurdiagonalen"
+  },
+  {
+    "id": 144,
+    "adressenavn": "Asta Hanssens vei"
+  },
+  {
+    "id": 145,
+    "adressenavn": "Asta Nørregaards vei"
+  },
+  {
+    "id": 146,
+    "adressenavn": "Astrids vei"
+  },
+  {
+    "id": 147,
+    "adressenavn": "Atriumveien"
+  },
+  {
+    "id": 148,
+    "adressenavn": "Audenbølveien"
+  },
+  {
+    "id": 149,
+    "adressenavn": "Auduns vei"
+  },
+  {
+    "id": 150,
+    "adressenavn": "Augestadkollen"
+  },
+  {
+    "id": 151,
+    "adressenavn": "Augestadveien"
+  },
+  {
+    "id": 152,
+    "adressenavn": "Aulibråten"
+  },
+  {
+    "id": 153,
+    "adressenavn": "Aulivegen"
+  },
+  {
+    "id": 154,
+    "adressenavn": "Aurbergmoen"
+  },
+  {
+    "id": 155,
+    "adressenavn": "Aurfaret"
+  },
+  {
+    "id": 156,
+    "adressenavn": "Aursbråtenveien"
+  },
+  {
+    "id": 157,
+    "adressenavn": "Aursetveien"
+  },
+  {
+    "id": 158,
+    "adressenavn": "Aurstien"
+  },
+  {
+    "id": 159,
+    "adressenavn": "Aurstubben"
+  },
+  {
+    "id": 160,
+    "adressenavn": "Aurtjennveien"
+  },
+  {
+    "id": 161,
+    "adressenavn": "Aurtunet"
+  },
+  {
+    "id": 162,
+    "adressenavn": "Aurvegen"
+  },
+  {
+    "id": 163,
+    "adressenavn": "Aurveien"
+  },
+  {
+    "id": 164,
+    "adressenavn": "Ausenvegen"
+  },
+  {
+    "id": 165,
+    "adressenavn": "Austaddalsvegen"
+  },
+  {
+    "id": 166,
+    "adressenavn": "Austlisvingen"
+  },
+  {
+    "id": 167,
+    "adressenavn": "Austliveien"
+  },
+  {
+    "id": 168,
+    "adressenavn": "Autenstubben"
+  },
+  {
+    "id": 169,
+    "adressenavn": "Autenveien"
+  },
+  {
+    "id": 170,
+    "adressenavn": "Autenåsen"
+  },
+  {
+    "id": 171,
+    "adressenavn": "Averstadmoen"
+  },
+  {
+    "id": 172,
+    "adressenavn": "Averstadvegen"
+  },
+  {
+    "id": 173,
+    "adressenavn": "Avløsveien"
+  },
+  {
+    "id": 174,
+    "adressenavn": "Avstikkeren"
+  },
+  {
+    "id": 6804,
+    "adressenavn": "Aagots vei"
+  },
+  {
+    "id": 6805,
+    "adressenavn": "Aasmund Vinjes vei"
+  },
+  {
+    "id": 6806,
+    "adressenavn": "Aasta Hansteens vei"
+  },
+  {
+    "id": 6807,
+    "adressenavn": "Abbediengen terrasse"
+  },
+  {
+    "id": 6808,
+    "adressenavn": "Abbediengveien"
+  },
+  {
+    "id": 6809,
+    "adressenavn": "Abbedikollen"
+  },
+  {
+    "id": 6810,
+    "adressenavn": "Abbedisvingen"
+  },
+  {
+    "id": 6811,
+    "adressenavn": "Abildsøfaret"
+  },
+  {
+    "id": 6812,
+    "adressenavn": "Abildsøveien"
+  },
+  {
+    "id": 6813,
+    "adressenavn": "Adam Hiorths vei"
+  },
+  {
+    "id": 6814,
+    "adressenavn": "Admiral Børresens vei"
+  },
+  {
+    "id": 6815,
+    "adressenavn": "Adventveien"
+  },
+  {
+    "id": 6816,
+    "adressenavn": "Agathe Grøndahls gate"
+  },
+  {
+    "id": 6817,
+    "adressenavn": "Agdergata"
+  },
+  {
+    "id": 6818,
+    "adressenavn": "Agmund Bolts vei"
+  },
+  {
+    "id": 6819,
+    "adressenavn": "Agronomveien"
+  },
+  {
+    "id": 6820,
+    "adressenavn": "Akebakkeskogen"
+  },
+  {
+    "id": 6821,
+    "adressenavn": "Akerlia"
+  },
+  {
+    "id": 6822,
+    "adressenavn": "Akersbakken"
+  },
+  {
+    "id": 6823,
+    "adressenavn": "Akersborg terrasse"
+  },
+  {
+    "id": 6824,
+    "adressenavn": "Akersgata"
+  },
+  {
+    "id": 6825,
+    "adressenavn": "Akershusstranda"
+  },
+  {
+    "id": 6826,
+    "adressenavn": "Akersveien"
+  },
+  {
+    "id": 6827,
+    "adressenavn": "Albert Nordengens plass"
+  },
+  {
+    "id": 6828,
+    "adressenavn": "Alf Bjerckes vei"
+  },
+  {
+    "id": 6829,
+    "adressenavn": "Alfaset 1. industrivei"
+  },
+  {
+    "id": 6830,
+    "adressenavn": "Alfaset 3. industrivei"
+  },
+  {
+    "id": 6831,
+    "adressenavn": "Alfasetveien"
+  },
+  {
+    "id": 6832,
+    "adressenavn": "Almeveien"
+  },
+  {
+    "id": 6833,
+    "adressenavn": "Alnabruveien"
+  },
+  {
+    "id": 6834,
+    "adressenavn": "Alnafetgata"
+  },
+  {
+    "id": 6835,
+    "adressenavn": "Alnagata"
+  },
+  {
+    "id": 6836,
+    "adressenavn": "Alnaparkveien"
+  },
+  {
+    "id": 6837,
+    "adressenavn": "Alundamveien"
+  },
+  {
+    "id": 6838,
+    "adressenavn": "Alunsjøveien"
+  },
+  {
+    "id": 6839,
+    "adressenavn": "Alvheimveien"
+  },
+  {
+    "id": 6840,
+    "adressenavn": "Amagerveien"
+  },
+  {
+    "id": 6841,
+    "adressenavn": "Ammerudgrenda"
+  },
+  {
+    "id": 6842,
+    "adressenavn": "Ammerudhellinga"
+  },
+  {
+    "id": 6843,
+    "adressenavn": "Ammerudveien"
+  },
+  {
+    "id": 6844,
+    "adressenavn": "Amtmann Meinichs gate"
+  },
+  {
+    "id": 6845,
+    "adressenavn": "Amund Hellands vei"
+  },
+  {
+    "id": 6846,
+    "adressenavn": "Ankerveien"
+  },
+  {
+    "id": 6847,
+    "adressenavn": "Anna Pleyms vei"
+  },
+  {
+    "id": 6848,
+    "adressenavn": "Anna Rogstads vei"
+  },
+  {
+    "id": 6849,
+    "adressenavn": "Anna Sethnes gate"
+  },
+  {
+    "id": 6850,
+    "adressenavn": "Anne Maries vei"
+  },
+  {
+    "id": 6851,
+    "adressenavn": "Ansgar Sørlies vei"
+  },
+  {
+    "id": 6852,
+    "adressenavn": "Antenneveien"
+  },
+  {
+    "id": 6853,
+    "adressenavn": "Anton Schjøths gate"
+  },
+  {
+    "id": 6854,
+    "adressenavn": "Anton Tschudis vei"
+  },
+  {
+    "id": 6855,
+    "adressenavn": "Apalløkkveien"
+  },
+  {
+    "id": 6856,
+    "adressenavn": "Apalveien"
+  },
+  {
+    "id": 6857,
+    "adressenavn": "Apotekergata"
+  },
+  {
+    "id": 6858,
+    "adressenavn": "Arbeidergata"
+  },
+  {
+    "id": 6859,
+    "adressenavn": "Arbeidersamfunnets plass"
+  },
+  {
+    "id": 6860,
+    "adressenavn": "Arbins gate"
+  },
+  {
+    "id": 6861,
+    "adressenavn": "Arbos gate"
+  },
+  {
+    "id": 6862,
+    "adressenavn": "Arctanders gate"
+  },
+  {
+    "id": 6863,
+    "adressenavn": "Arendalsgata"
+  },
+  {
+    "id": 6864,
+    "adressenavn": "Arilds vei"
+  },
+  {
+    "id": 6865,
+    "adressenavn": "Arildsvingen"
+  },
+  {
+    "id": 6866,
+    "adressenavn": "Arkitekt Steckmests vei"
+  },
+  {
+    "id": 6867,
+    "adressenavn": "Armauer Hansens gate"
+  },
+  {
+    "id": 6868,
+    "adressenavn": "Arne Garborgs plass"
+  },
+  {
+    "id": 6869,
+    "adressenavn": "Arne Garborgs vei"
+  },
+  {
+    "id": 6870,
+    "adressenavn": "Arnebråtveien"
+  },
+  {
+    "id": 6871,
+    "adressenavn": "Arnes vei"
+  },
+  {
+    "id": 6872,
+    "adressenavn": "Arnljot Gellines vei"
+  },
+  {
+    "id": 6873,
+    "adressenavn": "Arnstein Arnebergs vei"
+  },
+  {
+    "id": 6874,
+    "adressenavn": "Arnulf Øverlands vei"
+  },
+  {
+    "id": 6875,
+    "adressenavn": "Arthur Nordlies vei"
+  },
+  {
+    "id": 6876,
+    "adressenavn": "Arups gate"
+  },
+  {
+    "id": 6877,
+    "adressenavn": "Arvesetveien"
+  },
+  {
+    "id": 6878,
+    "adressenavn": "Asalveien"
+  },
+  {
+    "id": 6879,
+    "adressenavn": "Asbjørnsens vei"
+  },
+  {
+    "id": 6880,
+    "adressenavn": "Aschehougs vei"
+  },
+  {
+    "id": 6881,
+    "adressenavn": "Askeladdveien"
+  },
+  {
+    "id": 6882,
+    "adressenavn": "Askergata"
+  },
+  {
+    "id": 6883,
+    "adressenavn": "Askeveien"
+  },
+  {
+    "id": 6884,
+    "adressenavn": "Aslakveien"
+  },
+  {
+    "id": 6885,
+    "adressenavn": "Aslaug Vaas veg"
+  },
+  {
+    "id": 6886,
+    "adressenavn": "Aspehaugveien"
+  },
+  {
+    "id": 6887,
+    "adressenavn": "Asperudlia"
+  },
+  {
+    "id": 6888,
+    "adressenavn": "Asperudtoppen"
+  },
+  {
+    "id": 6889,
+    "adressenavn": "Asperudveien"
+  },
+  {
+    "id": 6890,
+    "adressenavn": "Asperudåsen"
+  },
+  {
+    "id": 6891,
+    "adressenavn": "Aspestien"
+  },
+  {
+    "id": 6892,
+    "adressenavn": "Astrids vei"
+  },
+  {
+    "id": 6893,
+    "adressenavn": "August Cappelens gate"
+  },
+  {
+    "id": 6894,
+    "adressenavn": "Aurskoggata"
+  },
+  {
+    "id": 6895,
+    "adressenavn": "Austliveien"
+  },
+  {
+    "id": 6896,
+    "adressenavn": "Avlangruds vei"
+  },
+  {
+    "id": 6897,
+    "adressenavn": "Avstikkeren"
+  },
+  {
+    "id": 6898,
+    "adressenavn": "Axel Brinchs vei"
+  },
+  {
+    "id": 6899,
+    "adressenavn": "Axel Flinders vei"
+  },
+  {
+    "id": 6900,
+    "adressenavn": "Axel Huitfeldts vei"
+  }
+]
