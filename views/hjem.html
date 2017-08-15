@@ -1,3 +1,33 @@
 <div class="body">
   <h1>{{hello}}</h1>
+
+  <div id="menu" >
+    <select ng-model="search.titleStatus" ng-options="status for status in params.titleStatus" ng-change="update()"></select>
+    <select ng-model="search.model" ng-options="model for model in params.models" ng-change="update()"></select>
+    <select ng-model="search.exteriors" ng-options="exterior for exterior in params.exteriors" ng-change="update()"></select>
+    <select ng-model="search.battery" ng-options="battery for battery in params.batteries" ng-change="update()"></select>
+    <input type="text" ng-model="search.vin" ng-change="update()"></input>
+  </div>
+
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Vin</th>
+          <th>Badge</th>
+          <th>Price</th>
+          <th>Odometer</th>
+          <th>Bilde</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="car in cars">
+          <td>{{car.Vin}}</td>
+          <td>{{car.Badge}}</td>
+      		<td>{{car.UsedVehiclePrice}}</td>
+      		<td>{{car.Odometer}}</td>
+          <td><img src="{{car.imageUrl}}"></td>
+        </tr>
+      </tbody>
+  </div>
 </div>

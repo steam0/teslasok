@@ -1,21 +1,30 @@
-myApp.factory('TeslaService', ['$cookies', '$q', '$rootScope', '$http', '$log', '$window', '$sce', function ($cookies, $q, $rootScope, $http, $log, $window, $sce) {
+myApp.factory('TeslaService', ['$cookies', '$q', '$rootScope', '$http', '$log', '$window', '$sce', '$httpParamSerializer', function ($cookies, $q, $rootScope, $http, $log, $window, $sce, $httpParamSerializer) {
   return {
-    getSingleCar: function (vin) {
+    search: function (params) {
       var deferred = $q.defer();
-      $log.info("Test");
-      var requestUrl = $rootScope.hostname + "exteriors=all&model=&battery=all&priceRange=0%2C1500000&city=null&state=null&country=NO&sort=featured%7Casc&titleStatus=new&vin=5YJSA7E48HF202950&callback=JSON_CALLBACK";
+      var cleanParams = {};
+      Object.keys(params).forEach(function (param) {
+        if (params[param]) {
+          cleanParams[param] = params[param];
+        }
+      });
+      var queryString = $httpParamSerializer(cleanParams);
+      var requestUrl = $rootScope.hostname +  queryString;
+      $log.info(requestUrl);
 
-      $http.jsonp(requestUrl).success(function(data){
-              console.log(data.found);
-          });
-      /*$http.jsonp(requestUrl, {params: {cb: 'JSON_CALLBACK'}, headers: { 'Accept': 'text/html' }}).then(function (response) {
+      $http.get(requestUrl).then(function (response) {
           deferred.resolve(response);
       }, function (error) {
           $log.error(error);
           deferred.reject(error);
       });
 
-      return deferred.promise;*/
+      return deferred.promise;
+    },
+
+    getImageUrl: function (car) {
+      var queryString = "model=" + car.ModelVariant + "&view=STUD_3QTR&size=900&bkba_opt=2&file_type=jpg&options="+car.OptionCodeList.join(",");
+      return $rootScope.imageHostname + queryString;
     }
   }
 }]);
