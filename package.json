@@ -4,7 +4,8 @@
   "description": "Sok etter tesla",
   "main": "index.js",
   "scripts": {
-    "start": "harp server --port 5000"
+    "start": "heroku local web",
+    "local": "harp server --port 5000"
   },
   "author": "",
   "license": "ISC",
