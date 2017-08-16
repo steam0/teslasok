@@ -13,22 +13,54 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
       "models": ["MODEL_S", "MODEL_X", "all"],
       "exteriors": ["all", "black", "white", "brown", "blue", "grey", "silver", "red"],
       "batteries": ["all", "60", "70", "75", "85", "90", "100"],
-      "titleStatus": ["new", "used"]
+      "titleStatus": ["new", "used"],
+      "audioPackage": {
+        "Standard sound": "AU00",
+        "Premium sound": "AU01",
+        "Both": null
+      },
+      "premiumPackage": {
+        "No premium": false,
+        "With premium": true,
+        "Both": null
+      },
+      "freeSupercharging": {
+        "Unlimited supercharging": "SC01",
+        "Paid supercharging": "SC04",
+        "All": null
+      },
+      "roofOptions": {
+        "Metal roof": 1,
+        "Fixed glass roof": 2,
+        "Panoramic roof": 3,
+        "All": 0
+      },
+      "autopilot": {
+        "HW2 (No Autopilot)": "APF0",
+        "Enhanced Auto Pilot": "APF1",
+        "Full Self Driving": "APF2",
+        "All": null
+      }
     };
+
+    $scope.filter = {
+      "roofOptions": 0,
+      "autopilot": null,
+      "premiumPackage": null,
+      "freeSupercharging": null,
+      "audioPackage": null
+    }
 
     $scope.search = {
       "exteriors": "all",
-      "model": "",
+      "model": "all",
       "battery": "all",
       "priceRange": "0%2C1500000",
       "city": null,
       "state": null,
       "country": "NO",
       "sort": "featured%7Casc",
-      "titleStatus": "new",
-      "isPanoramic": false,
-      "isPremium": false,
-      "freeSupercharing": false
+      "titleStatus": "new"
     };
 
     $scope.update = function () {
@@ -40,15 +72,37 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
         });
 
         // Filter by Free Supercharging
-        if ($scope.search.freeSupercharing) {
-          $scope.cars = $filter('optioncode')($scope.cars, 'SC01');
+        if ($scope.filter.freeSupercharging) {
+          $scope.cars = $filter('optioncode')($scope.cars, $scope.search.freeSupercharging);
         }
 
         // Filter by panoramic roof
-        $scope.cars = $filter('filter')($scope.cars, {isPanoramic: $scope.search.isPanoramic});
+        if ($scope.filter.roofOptions) {
+          if ($scope.filter.roofOptions == 1) {
+              $scope.cars = $filter('filter')($scope.cars, {isPanoramic: false});
+              $scope.cars = $filter('filter')($scope.cars, {isFixedGlassRoof: false});
+          } else if ($scope.filter.roofOptions == 2) {
+              $scope.cars = $filter('filter')($scope.cars, {isFixedGlassRoof: true});
+          } else if ($scope.filter.roofOptions == 3) {
+              $scope.cars = $filter('filter')($scope.cars, {isPanoramic: true});
+          }
+        }
 
         // Filter by premium package
-        $scope.cars = $filter('filter')($scope.cars, {isPremium: $scope.search.isPremium});
+        if ($scope.filter.premiumPackage) {
+          $scope.cars = $filter('filter')($scope.cars, {isPremium: $scope.filter.premiumPackage});
+        }
+
+        // Filter by audioPackage
+        //console.log($scope.search.audioPackage);
+        if ($scope.filter.audioPackage) {
+            $scope.cars = $filter('optioncode')($scope.cars, $scope.search.audioPackage);
+        }
+
+        // Filter by autopilot
+        if ($scope.filter.autopilot) {
+            $scope.cars = $filter('filter')($scope.cars, {AutoPilot: $scope.filter.autopilot});
+        }
 
         // Result
         console.log($scope.cars);

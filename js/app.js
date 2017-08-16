@@ -6,6 +6,7 @@ angular.module('myApp', ['ngRoute', 'environment', 'ngResource', 'ngAnimate', 'n
       cars.forEach(function (car) {
           car.OptionCodeList.forEach(function (option) {
             if (option === optionCode) {
+              console.log(option + "?" + optionCode);
               filteredCars.push(car);
             }
           });

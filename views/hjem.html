@@ -6,11 +6,12 @@
     <select ng-model="search.model" ng-options="model for model in params.models" ng-change="update()"></select>
     <select ng-model="search.exteriors" ng-options="exterior for exterior in params.exteriors" ng-change="update()"></select>
     <select ng-model="search.battery" ng-options="battery for battery in params.batteries" ng-change="update()"></select>
-    <!--<select ng-model="search.freeSupercharging" ng-options="key as value for (key , value) in data"></select>-->
+    <select ng-model="filter.audioPackage" ng-options="value as key for (key , value) in params.audioPackage" ng-change="update()"></select>
+    <select ng-model="filter.roofOptions" ng-options="value as key for (key , value) in params.roofOptions" ng-change="update()"></select>
+    <select ng-model="filter.premiumPackage" ng-options="value as key for (key , value) in params.premiumPackage" ng-change="update()"></select>
+    <select ng-model="filter.freeSupercharging" ng-options="value as key for (key , value) in params.freeSupercharging" ng-change="update()"></select>
+    <select ng-model="filter.autopilot" ng-options="value as key for (key , value) in params.autopilot" ng-change="update()"></select>
     <input type="text" ng-model="search.vin" ng-change="update()"></input>
-    <input type="checkbox" ng-model="search.isPanoramic" ng-change="update()">Panorama glasstak</input>
-    <input type="checkbox" ng-model="search.isPremium" ng-change="update()">Premium oppgradering</input>
-    <input type="checkbox" ng-model="search.freeSupercharing" ng-change="update()">Gratis superlading</input>
   </div>
 
   <div>
@@ -39,6 +40,13 @@
             </a>
           </th>
           <th>
+            <a href="" ng-click="sortType = 'Discount'; sortReverse = !sortReverse">
+              Discount
+              <span ng-show="sortType == 'Discount' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'Discount' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
+          </th>
+          <th>
             <a href="" ng-click="sortType = 'Odometer'; sortReverse = !sortReverse">
               Odometer
               <span ng-show="sortType == 'Odometer' && !sortReverse" class="fa fa-caret-down"></span>
@@ -64,6 +72,7 @@
           <td>{{car.Vin}}</td>
           <td>{{car.Badge}}</td>
       		<td>{{car.UsedVehiclePrice}}</td>
+          <td>{{car.Discount}}</td>
       		<td>{{car.Odometer}}</td>
           <td>{{car.Year}}</td>
           <td><img src="{{car.imageUrl}}"></td>
