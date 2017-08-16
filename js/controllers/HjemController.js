@@ -27,7 +27,8 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
       "sort": "featured%7Casc",
       "titleStatus": "new",
       "isPanoramic": false,
-      "isPremium": false
+      "isPremium": false,
+      "freeSupercharing": false
     };
 
     $scope.update = function () {
@@ -38,10 +39,15 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
           car.imageUrl = TeslaService.getImageUrl(car);
         });
 
+        // Filter by Free Supercharging
+        if ($scope.search.freeSupercharing) {
+          $scope.cars = $filter('optioncode')($scope.cars, 'SC01');
+        }
+
         // Filter by panoramic roof
         $scope.cars = $filter('filter')($scope.cars, {isPanoramic: $scope.search.isPanoramic});
 
-        // Filter by
+        // Filter by premium package
         $scope.cars = $filter('filter')($scope.cars, {isPremium: $scope.search.isPremium});
 
         // Result

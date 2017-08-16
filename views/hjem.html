@@ -6,9 +6,11 @@
     <select ng-model="search.model" ng-options="model for model in params.models" ng-change="update()"></select>
     <select ng-model="search.exteriors" ng-options="exterior for exterior in params.exteriors" ng-change="update()"></select>
     <select ng-model="search.battery" ng-options="battery for battery in params.batteries" ng-change="update()"></select>
+    <!--<select ng-model="search.freeSupercharging" ng-options="key as value for (key , value) in data"></select>-->
     <input type="text" ng-model="search.vin" ng-change="update()"></input>
     <input type="checkbox" ng-model="search.isPanoramic" ng-change="update()">Panorama glasstak</input>
     <input type="checkbox" ng-model="search.isPremium" ng-change="update()">Premium oppgradering</input>
+    <input type="checkbox" ng-model="search.freeSupercharing" ng-change="update()">Gratis superlading</input>
   </div>
 
   <div>
