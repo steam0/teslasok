@@ -1,0 +1,13 @@
+<div class="body">
+  <h2>{{car.Vin}}</h2>
+  <h2>{{car.Badge}}</h2>
+  <h2>{{car.UsedVehiclePrice}}</h2>
+  <h2>{{car.Discount}}</h2>
+  <h2>{{car.Odometer}} {{car.OdometerType}}</h2>
+  <h2>{{car.Year}}</h2>
+  <img src="{{car.imageUrl}}"></a>
+
+  <ul ng-repeat="optionCode in car.OptionCodeList">
+    <li>{{optionCode}} = {{getOptionCodeDescription(optionCode)}}</li>
+  </ul>
+</div>

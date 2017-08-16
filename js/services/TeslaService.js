@@ -23,7 +23,7 @@ myApp.factory('TeslaService', ['$cookies', '$q', '$rootScope', '$http', '$log', 
     },
 
     getImageUrl: function (car) {
-      var queryString = "model=" + car.ModelVariant + "&view=STUD_3QTR&size=900&bkba_opt=2&file_type=jpg&options="+car.OptionCodeList.join(",");
+      var queryString = "model=" + car.ModelVariant + "&view=STUD_3QTR&size=500&bkba_opt=2&file_type=jpg&options="+car.OptionCodeList.join(",");
       return $rootScope.imageHostname + queryString;
     }
   }

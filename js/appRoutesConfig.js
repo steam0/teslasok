@@ -10,12 +10,16 @@ myApp.config(['$routeProvider', '$locationProvider', '$sceDelegateProvider', fun
 
     $routeProvider
       .when('/', {
-            templateUrl: 'views/hjem.html',
-            controller: 'HjemController'
-        })
-        .otherwise({
-            redirectTo: '/'
-        }
+        templateUrl: 'views/hjem.html',
+        controller: 'HjemController'
+      })
+      .when('/details', {
+        templateUrl: 'views/details.html',
+        controller: 'DetailsController'
+      })
+      .otherwise({
+        redirectTo: '/'
+      }
     );
 
 

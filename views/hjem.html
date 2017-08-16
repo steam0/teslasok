@@ -1,130 +1,157 @@
-<div class="body">
-  <h1>{{hello}}</h1>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">
+        <img alt="Home" src="">
+      </a>
+    </div>
+  </div>
+</nav>
 
-  <div id="menu" >
-    <table class="table">
-      <thead>
-        <tr>
-          <th>New/Used</th>
-          <th>Model</th>
-          <th>Colour</th>
-          <th>Battery size</th>
-          <th>Audio</th>
-          <th>Roof</th>
-          <th>Premium package</th>
-          <th>supercharging</th>
-          <th>Autopilot</th>
-          <th>Winter package</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <select ng-model="search.titleStatus" ng-options="status for status in params.titleStatus" ng-change="update()"></select>
-          </td>
-          <td>
-            <select ng-model="search.model" ng-options="model for model in params.models" ng-change="update()"></select>
-          </td>
-          <td>
-            <select ng-model="search.exteriors" ng-options="exterior for exterior in params.exteriors" ng-change="update()"></select>
-          </td>
-          <td>
-            <select ng-model="search.battery" ng-options="battery for battery in params.batteries" ng-change="update()"></select>
-          </td>
-          <td>
-            <select ng-model="filter.audioPackage" ng-options="value as key for (key , value) in params.audioPackage" ng-change="update()"></select>
-          </td>
-          <td>
-            <select ng-model="filter.roofOptions" ng-options="value as key for (key , value) in params.roofOptions" ng-change="update()"></select>
-          </td>
-          <td>
-            <select ng-model="filter.premiumPackage" ng-options="value as key for (key , value) in params.premiumPackage" ng-change="update()"></select>
-          </td>
-          <td>
-            <select ng-model="filter.freeSupercharging" ng-options="value as key for (key , value) in params.freeSupercharging" ng-change="update()"></select>
-          </td>
-          <td>
-            <select ng-model="filter.autopilot" ng-options="value as key for (key , value) in params.autopilot" ng-change="update()"></select>
-          </td>
-          <td>
-            <select ng-model="filter.winterPackage" ng-options="value as key for (key , value) in params.winterPackage" ng-change="update()"></select>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<!-- Begin page content -->
+<div class="center-block">
 
-    <uib-accordion close-others="oneAtATime">
-      <div uib-accordion-group class="panel-default" heading="Avansert søk" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
-        <p> VIN Filter: </p><input type="text" ng-model="search.vin" ng-change="update()"></input>
-        <p> Option codes: </p><input type="text" ng-model="filter.optioncodes" ng-change="update()"></input>
-      </div>
-    </uib-accordion>
+  <div class="row">
+    <div class='col-md-10 alert alert-info'>
+      Welcome to free to use search enginge to look for Tesla Inventory Cars.
 
+      It takes both time and money to create these tools for you Tesla enthusiasts and if you would ever consider to help us out then
+      please use our referral code: <a href="http://ts.la/henrik3877">http://ts.la/henrik3877</a>
+    </div>
   </div>
 
-  <div>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>
-            <a href="" ng-click="sortType = 'Vin'; sortReverse = !sortReverse">
-              VIN
-              <span ng-show="sortType == 'Vin' && !sortReverse" class="fa fa-caret-down"></span>
-              <span ng-show="sortType == 'Vin' && sortReverse" class="fa fa-caret-up"></span>
-            </a>
-          </th>
-          <th>
-            <a href="" ng-click="sortType = 'Badge'; sortReverse = !sortReverse">
-              Badge
-              <span ng-show="sortType == 'Badge' && !sortReverse" class="fa fa-caret-down"></span>
-              <span ng-show="sortType == 'Badge' && sortReverse" class="fa fa-caret-up"></span>
-            </a>
-          </th>
-          <th>
-            <a href="" ng-click="sortType = 'UsedVehiclePrice'; sortReverse = !sortReverse">
-              Price
-              <span ng-show="sortType == 'UsedVehiclePrice' && !sortReverse" class="fa fa-caret-down"></span>
-              <span ng-show="sortType == 'UsedVehiclePrice' && sortReverse" class="fa fa-caret-up"></span>
-            </a>
-          </th>
-          <th>
-            <a href="" ng-click="sortType = 'Discount'; sortReverse = !sortReverse">
-              Discount
-              <span ng-show="sortType == 'Discount' && !sortReverse" class="fa fa-caret-down"></span>
-              <span ng-show="sortType == 'Discount' && sortReverse" class="fa fa-caret-up"></span>
-            </a>
-          </th>
-          <th>
-            <a href="" ng-click="sortType = 'Odometer'; sortReverse = !sortReverse">
-              Odometer
-              <span ng-show="sortType == 'Odometer' && !sortReverse" class="fa fa-caret-down"></span>
-              <span ng-show="sortType == 'Odometer' && sortReverse" class="fa fa-caret-up"></span>
-            </a>
-          </th>
-          <th>
-            <a href="" ng-click="sortType = 'Year'; sortReverse = !sortReverse">
-              Year
-              <span ng-show="sortType == 'Year' && !sortReverse" class="fa fa-caret-down"></span>
-              <span ng-show="sortType == 'Year' && sortReverse" class="fa fa-caret-up"></span>
-            </a>
-          </th>
-          <th>
-            <a href="" ng-click="">
-              Image
-            </a>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="car in cars | orderBy:sortType:sortReverse">
-          <td>{{car.Vin}}</td>
-          <td>{{car.Badge}}</td>
-      		<td>{{car.UsedVehiclePrice}}</td>
-          <td>{{car.Discount}}</td>
-      		<td>{{car.Odometer}} {{car.OdometerType}}</td>
-          <td>{{car.Year}}</td>
-          <td><img src="{{car.imageUrl}}"></td>
-        </tr>
-      </tbody>
+  <div class="row">
+    <div class="col-md-10">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>New/Used</th>
+            <th>Model</th>
+            <th>Colour</th>
+            <th>Battery size</th>
+            <th>Audio</th>
+            <th>Roof</th>
+            <th>Premium package</th>
+            <th>supercharging</th>
+            <th>Autopilot</th>
+            <th>Winter package</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <select ng-model="search.titleStatus" ng-options="status for status in params.titleStatus" ng-change="update()"></select>
+            </td>
+            <td>
+              <select ng-model="search.model" ng-options="model for model in params.models" ng-change="update()"></select>
+            </td>
+            <td>
+              <select ng-model="search.exteriors" ng-options="exterior for exterior in params.exteriors" ng-change="update()"></select>
+            </td>
+            <td>
+              <select ng-model="search.battery" ng-options="battery for battery in params.batteries" ng-change="update()"></select>
+            </td>
+            <td>
+              <select ng-model="filter.audioPackage" ng-options="value as key for (key , value) in params.audioPackage" ng-change="update()"></select>
+            </td>
+            <td>
+              <select ng-model="filter.roofOptions" ng-options="value as key for (key , value) in params.roofOptions" ng-change="update()"></select>
+            </td>
+            <td>
+              <select ng-model="filter.premiumPackage" ng-options="value as key for (key , value) in params.premiumPackage" ng-change="update()"></select>
+            </td>
+            <td>
+              <select ng-model="filter.freeSupercharging" ng-options="value as key for (key , value) in params.freeSupercharging" ng-change="update()"></select>
+            </td>
+            <td>
+              <select ng-model="filter.autopilot" ng-options="value as key for (key , value) in params.autopilot" ng-change="update()"></select>
+            </td>
+            <td>
+              <select ng-model="filter.winterPackage" ng-options="value as key for (key , value) in params.winterPackage" ng-change="update()"></select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10">
+      <uib-accordion close-others="oneAtATime">
+        <div uib-accordion-group class="panel-default" heading="Avansert søk" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+          <p> VIN Filter: </p><input type="text" ng-model="search.vin" ng-change="update()"></input>
+          <p> Option codes: </p><input type="text" ng-model="filter.optioncodes" ng-change="update()"></input>
+          <p> Comma separated list: ADPX2,BTX8 </p>
+        </div>
+      </uib-accordion>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>
+              <a href="" ng-click="sortType = 'Vin'; sortReverse = !sortReverse">
+                VIN
+                <span ng-show="sortType == 'Vin' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'Vin' && sortReverse" class="fa fa-caret-up"></span>
+              </a>
+            </th>
+            <th>
+              <a href="" ng-click="sortType = 'Badge'; sortReverse = !sortReverse">
+                Badge
+                <span ng-show="sortType == 'Badge' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'Badge' && sortReverse" class="fa fa-caret-up"></span>
+              </a>
+            </th>
+            <th>
+              <a href="" ng-click="sortType = 'UsedVehiclePrice'; sortReverse = !sortReverse">
+                Price
+                <span ng-show="sortType == 'UsedVehiclePrice' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'UsedVehiclePrice' && sortReverse" class="fa fa-caret-up"></span>
+              </a>
+            </th>
+            <th>
+              <a href="" ng-click="sortType = 'Discount'; sortReverse = !sortReverse">
+                Discount
+                <span ng-show="sortType == 'Discount' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'Discount' && sortReverse" class="fa fa-caret-up"></span>
+              </a>
+            </th>
+            <th>
+              <a href="" ng-click="sortType = 'Odometer'; sortReverse = !sortReverse">
+                Odometer
+                <span ng-show="sortType == 'Odometer' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'Odometer' && sortReverse" class="fa fa-caret-up"></span>
+              </a>
+            </th>
+            <th>
+              <a href="" ng-click="sortType = 'Year'; sortReverse = !sortReverse">
+                Year
+                <span ng-show="sortType == 'Year' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'Year' && sortReverse" class="fa fa-caret-up"></span>
+              </a>
+            </th>
+            <th>
+              <a href="" ng-click="">
+                Image
+              </a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="car in cars | orderBy:sortType:sortReverse">
+            <td>{{car.Vin}}</td>
+            <td>{{car.Badge}}</td>
+        		<td>{{car.UsedVehiclePrice}}</td>
+            <td>{{car.Discount}}</td>
+        		<td>{{car.Odometer}} {{car.OdometerType}}</td>
+            <td>{{car.Year}}</td>
+            <td><a href="" ng-click="showDetails(car)"><img src="{{car.imageUrl}}"></a></td>
+          </tr>
+        </tbody>
+    </div>
   </div>
 </div>

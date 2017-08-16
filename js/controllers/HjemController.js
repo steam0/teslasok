@@ -9,6 +9,12 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
         return $sce.trustAsResourceUrl($rootScope.hostname);
       }
 
+    $scope.optionCodes = {};
+
+    $http.get('json/options.json').then(function(response) {
+      $scope.optionCodes = response.data.tesla.configSetPrices.options;
+    });
+
     $scope.params = {
       "models": ["MODEL_S", "MODEL_X", "all"],
       "exteriors": ["all", "black", "white", "brown", "blue", "grey", "silver", "red"],
@@ -127,7 +133,7 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
         // Result
         console.log($scope.cars);
       });
-    }
+    };
 
     $scope.initTable = function () {
       TeslaService.search($scope.search).then(function (response) { 
@@ -137,7 +143,12 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
           car.imageUrl = TeslaService.getImageUrl(car);
         });
       });
-    }
+    };
+
+    $scope.showDetails = function (car) {
+      $location.path('/details').search({"vin": car.Vin, "titleStatus": car.TitleStatus});  
+    };
+
 
     $scope.initTable();
 }]);
