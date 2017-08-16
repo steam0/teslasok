@@ -7,25 +7,63 @@
     <select ng-model="search.exteriors" ng-options="exterior for exterior in params.exteriors" ng-change="update()"></select>
     <select ng-model="search.battery" ng-options="battery for battery in params.batteries" ng-change="update()"></select>
     <input type="text" ng-model="search.vin" ng-change="update()"></input>
+    <input type="checkbox" ng-model="search.isPanoramic" ng-change="update()">Panorama glasstak</input>
+    <input type="checkbox" ng-model="search.isPremium" ng-change="update()">Premium oppgradering</input>
   </div>
 
   <div>
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Vin</th>
-          <th>Badge</th>
-          <th>Price</th>
-          <th>Odometer</th>
-          <th>Bilde</th>
+          <th>
+            <a href="" ng-click="sortType = 'Vin'; sortReverse = !sortReverse">
+              VIN
+              <span ng-show="sortType == 'Vin' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'Vin' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
+          </th>
+          <th>
+            <a href="" ng-click="sortType = 'Badge'; sortReverse = !sortReverse">
+              Badge
+              <span ng-show="sortType == 'Badge' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'Badge' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
+          </th>
+          <th>
+            <a href="" ng-click="sortType = 'UsedVehiclePrice'; sortReverse = !sortReverse">
+              Price
+              <span ng-show="sortType == 'UsedVehiclePrice' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'UsedVehiclePrice' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
+          </th>
+          <th>
+            <a href="" ng-click="sortType = 'Odometer'; sortReverse = !sortReverse">
+              Odometer
+              <span ng-show="sortType == 'Odometer' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'Odometer' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
+          </th>
+          <th>
+            <a href="" ng-click="sortType = 'Year'; sortReverse = !sortReverse">
+              Year
+              <span ng-show="sortType == 'Year' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'Year' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
+          </th>
+          <th>
+            <a href="" ng-click="">
+              Image
+            </a>
+          </th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="car in cars">
+        <tr ng-repeat="car in cars | orderBy:sortType:sortReverse">
           <td>{{car.Vin}}</td>
           <td>{{car.Badge}}</td>
       		<td>{{car.UsedVehiclePrice}}</td>
       		<td>{{car.Odometer}}</td>
+          <td>{{car.Year}}</td>
           <td><img src="{{car.imageUrl}}"></td>
         </tr>
       </tbody>

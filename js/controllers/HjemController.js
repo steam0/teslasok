@@ -1,7 +1,10 @@
-myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope', '$http', '$timeout', '$location', 'TeslaService', '$log','$sce', function ($cookies, $window, $scope, $rootScope, $http, $timeout, $location, TeslaService, $log, $sce) {
+myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope', '$http', '$timeout', '$location', 'TeslaService', '$log','$sce', '$filter', function ($cookies, $window, $scope, $rootScope, $http, $timeout, $location, TeslaService, $log, $sce, $filter) {
     $scope.hello = "Søk etter din Tesla";
     $scope.rawCar = [];
     $scope.cars = [];
+    $scope.sortType = 'Vin';
+    $scope.sortReverse  = false;  // set the default sort order
+    $scope.filterParam   = '';
     $scope.trustSrc = function(src) {
         return $sce.trustAsResourceUrl($rootScope.hostname);
       }
@@ -23,21 +26,38 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
       "country": "NO",
       "sort": "featured%7Casc",
       "titleStatus": "new",
+      "isPanoramic": false,
+      "isPremium": false
     };
 
     $scope.update = function () {
       TeslaService.search($scope.search).then(function (response) { 
         $scope.cars = response.data;
+
         $scope.cars.forEach(function (car) {
           car.imageUrl = TeslaService.getImageUrl(car);
         });
+
+        // Filter by panoramic roof
+        $scope.cars = $filter('filter')($scope.cars, {isPanoramic: $scope.search.isPanoramic});
+
+        // Filter by
+        $scope.cars = $filter('filter')($scope.cars, {isPremium: $scope.search.isPremium});
+
+        // Result
         console.log($scope.cars);
       });
     }
 
-    $scope.filter = function (key, filterParam) {
+    $scope.initTable = function () {
+      TeslaService.search($scope.search).then(function (response) { 
+        $scope.cars = response.data;
 
+        $scope.cars.forEach(function (car) {
+          car.imageUrl = TeslaService.getImageUrl(car);
+        });
+      });
     }
 
-    $scope.update();
+    $scope.initTable();
 }]);
