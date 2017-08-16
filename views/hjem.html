@@ -2,16 +2,64 @@
   <h1>{{hello}}</h1>
 
   <div id="menu" >
-    <select ng-model="search.titleStatus" ng-options="status for status in params.titleStatus" ng-change="update()"></select>
-    <select ng-model="search.model" ng-options="model for model in params.models" ng-change="update()"></select>
-    <select ng-model="search.exteriors" ng-options="exterior for exterior in params.exteriors" ng-change="update()"></select>
-    <select ng-model="search.battery" ng-options="battery for battery in params.batteries" ng-change="update()"></select>
-    <select ng-model="filter.audioPackage" ng-options="value as key for (key , value) in params.audioPackage" ng-change="update()"></select>
-    <select ng-model="filter.roofOptions" ng-options="value as key for (key , value) in params.roofOptions" ng-change="update()"></select>
-    <select ng-model="filter.premiumPackage" ng-options="value as key for (key , value) in params.premiumPackage" ng-change="update()"></select>
-    <select ng-model="filter.freeSupercharging" ng-options="value as key for (key , value) in params.freeSupercharging" ng-change="update()"></select>
-    <select ng-model="filter.autopilot" ng-options="value as key for (key , value) in params.autopilot" ng-change="update()"></select>
-    <input type="text" ng-model="search.vin" ng-change="update()"></input>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>New/Used</th>
+          <th>Model</th>
+          <th>Colour</th>
+          <th>Battery size</th>
+          <th>Audio</th>
+          <th>Roof</th>
+          <th>Premium package</th>
+          <th>supercharging</th>
+          <th>Autopilot</th>
+          <th>Winter package</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <select ng-model="search.titleStatus" ng-options="status for status in params.titleStatus" ng-change="update()"></select>
+          </td>
+          <td>
+            <select ng-model="search.model" ng-options="model for model in params.models" ng-change="update()"></select>
+          </td>
+          <td>
+            <select ng-model="search.exteriors" ng-options="exterior for exterior in params.exteriors" ng-change="update()"></select>
+          </td>
+          <td>
+            <select ng-model="search.battery" ng-options="battery for battery in params.batteries" ng-change="update()"></select>
+          </td>
+          <td>
+            <select ng-model="filter.audioPackage" ng-options="value as key for (key , value) in params.audioPackage" ng-change="update()"></select>
+          </td>
+          <td>
+            <select ng-model="filter.roofOptions" ng-options="value as key for (key , value) in params.roofOptions" ng-change="update()"></select>
+          </td>
+          <td>
+            <select ng-model="filter.premiumPackage" ng-options="value as key for (key , value) in params.premiumPackage" ng-change="update()"></select>
+          </td>
+          <td>
+            <select ng-model="filter.freeSupercharging" ng-options="value as key for (key , value) in params.freeSupercharging" ng-change="update()"></select>
+          </td>
+          <td>
+            <select ng-model="filter.autopilot" ng-options="value as key for (key , value) in params.autopilot" ng-change="update()"></select>
+          </td>
+          <td>
+            <select ng-model="filter.winterPackage" ng-options="value as key for (key , value) in params.winterPackage" ng-change="update()"></select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <uib-accordion close-others="oneAtATime">
+      <div uib-accordion-group class="panel-default" heading="Avansert søk" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+        <p> VIN Filter: </p><input type="text" ng-model="search.vin" ng-change="update()"></input>
+        <p> Option codes: </p><input type="text" ng-model="filter.optioncodes" ng-change="update()"></input>
+      </div>
+    </uib-accordion>
+
   </div>
 
   <div>
@@ -73,7 +121,7 @@
           <td>{{car.Badge}}</td>
       		<td>{{car.UsedVehiclePrice}}</td>
           <td>{{car.Discount}}</td>
-      		<td>{{car.Odometer}}</td>
+      		<td>{{car.Odometer}} {{car.OdometerType}}</td>
           <td>{{car.Year}}</td>
           <td><img src="{{car.imageUrl}}"></td>
         </tr>

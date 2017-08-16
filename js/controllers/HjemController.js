@@ -40,6 +40,11 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
         "Enhanced Auto Pilot": "APF1",
         "Full Self Driving": "APF2",
         "All": null
+      },
+      "winterPackage": {
+        "Winter package": "CW02",
+        "No winter package": "CW00",
+        "All": null
       }
     };
 
@@ -67,13 +72,14 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
       TeslaService.search($scope.search).then(function (response) { 
         $scope.cars = response.data;
 
+        // Get image urls
         $scope.cars.forEach(function (car) {
           car.imageUrl = TeslaService.getImageUrl(car);
         });
 
         // Filter by Free Supercharging
         if ($scope.filter.freeSupercharging) {
-          $scope.cars = $filter('optioncode')($scope.cars, $scope.search.freeSupercharging);
+          $scope.cars = $filter('optioncode')($scope.cars, $scope.filter.freeSupercharging);
         }
 
         // Filter by panoramic roof
@@ -96,12 +102,26 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
         // Filter by audioPackage
         //console.log($scope.search.audioPackage);
         if ($scope.filter.audioPackage) {
-            $scope.cars = $filter('optioncode')($scope.cars, $scope.search.audioPackage);
+            $scope.cars = $filter('optioncode')($scope.cars, $scope.filter.audioPackage);
         }
 
         // Filter by autopilot
         if ($scope.filter.autopilot) {
             $scope.cars = $filter('filter')($scope.cars, {AutoPilot: $scope.filter.autopilot});
+        }
+
+        // Filter by winter package
+        if ($scope.filter.winterPackage) {
+          $scope.cars = $filter('optioncode')($scope.cars, $scope.filter.winterPackage);
+        }
+
+        // Filter by optioncodes
+        if ($scope.filter.optioncodes) {
+          var codes = $scope.filter.optioncodes.split(",");
+          codes.forEach(function (code) {
+              code = code.trim();
+              $scope.cars = $filter('optioncode')($scope.cars, code);
+          });
         }
 
         // Result
