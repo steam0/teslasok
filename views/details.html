@@ -1,13 +1,70 @@
-<div class="body">
-  <h2>{{car.Vin}}</h2>
-  <h2>{{car.Badge}}</h2>
-  <h2>{{car.UsedVehiclePrice}}</h2>
-  <h2>{{car.Discount}}</h2>
-  <h2>{{car.Odometer}} {{car.OdometerType}}</h2>
-  <h2>{{car.Year}}</h2>
-  <img src="{{car.imageUrl}}"></a>
+<div ng-include="'/views/navigation/navbar.html'"></div>
 
-  <ul ng-repeat="optionCode in car.OptionCodeList">
-    <li>{{optionCode}} = {{getOptionCodeDescription(optionCode)}}</li>
-  </ul>
+<div class="center-block">
+  <div ng-show="car.TitleStatus == 'NEW'" class="row">
+    <div class='col-md-10 alert alert-success'>
+      <h4>This car is available to receive a discount of $1000 and free supercharging.</h4>
+
+      <p>By using this referral code when buying a car, you will get $1000 off the final price and get free supercharging for the time you own this car.<h4><a href="http://ts.la/henrik3877">http://ts.la/henrik3877</a></h4></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <img src="{{car.imageUrl}}" class="img-responsive center-block"></a>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <div class="panel panel-info panel-pricing">
+        <div class="panel-heading">
+          <h2>{{getKey(params.models, car.Model)}} {{car.Badge}}</h2>
+        </div>
+        <div class="panel-body text-center">
+          <p><strong>$300 / Month*</strong></p>
+        </div>
+
+        <ul class="list-group text-center">
+          <li class="list-group-item">{{car.Vin}}</li>
+          <li class="list-group-item">{{(car.UsedVehiclePrice+car.Discount) | number}} kr</li>
+          <li class="list-group-item">-{{car.Discount | number}} kr</li>
+          <li class="list-group-item">{{car.Odometer | number}} {{car.OdometerType}}</li>
+          <li class="list-group-item"><h4>{{car.UsedVehiclePrice | number}} kr</h4></li>
+        </ul>
+
+        <div class="panel-footer">
+            <a class="btn btn-lg btn-block btn-info" href="{{car.teslaUrl}}">See on Tesla.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-5">
+      <div ng-repeat="url in imageUrls">
+        <img src="{{url}}" class="img-responsive center-block"></a>
+      </div>
+    </div>
+
+    <div class="col-md-5">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Option Code</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="optionCode in car.OptionCodeList">
+            <td>
+                {{optionCode}}
+            </td>
+            <td>
+              {{getOptionCodeDescription(optionCode)}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

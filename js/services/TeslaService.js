@@ -22,8 +22,15 @@ myApp.factory('TeslaService', ['$cookies', '$q', '$rootScope', '$http', '$log', 
       return deferred.promise;
     },
 
-    getImageUrl: function (car) {
-      var queryString = "model=" + car.ModelVariant + "&view=STUD_3QTR&size=500&bkba_opt=2&file_type=jpg&options="+car.OptionCodeList.join(",");
+    getImageUrl: function (car, size, type) {
+      if (size === undefined) {
+        size = 900;
+      }
+
+      if (type === undefined) {
+        type = "STUD_3QTR"
+      }
+      var queryString = "model=" + car.ModelVariant + "&view="+type+"&size="+size+"&bkba_opt=2&file_type=jpg&options="+car.OptionCodeList.join(",");
       return $rootScope.imageHostname + queryString;
     }
   }
