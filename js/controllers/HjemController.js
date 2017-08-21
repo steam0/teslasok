@@ -5,6 +5,8 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
     $scope.sortType = 'Vin';
     $scope.sortReverse  = false;  // set the default sort order
     $scope.filterParam   = '';
+    $scope.listType = false;
+    
     $scope.trustSrc = function(src) {
         return $sce.trustAsResourceUrl($rootScope.hostname);
       }
@@ -127,6 +129,9 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
       $location.path('/details').search({"vin": car.Vin, "titleStatus": car.TitleStatus});
     };
 
+    $scope.getKey = function (object, value) {
+      return SearchParamService.getKey(object, value);
+    };
 
     $scope.initTable();
 }]);

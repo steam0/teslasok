@@ -79,8 +79,16 @@ myApp.factory('SearchParamService', ['$cookies', '$q', '$rootScope', '$http', '$
           "AWD": 2,
           "Both": 0
         },
-        "images": ["STUD_3QTR", "STUD_SEAT_ALTA", "STUD_REAR", "STUD_ABOV", "STUD_SEAT_3QTR", "STUD_SIDE"]
-      };
+        "images": ["STUD_3QTR", "STUD_SEAT_ALTA", "STUD_REAR", "STUD_ABOV", "STUD_SIDE"]
+      }
+    },
+
+    getKey: function (object, value) {
+      for (var key in object) {
+        if (object[key] === value) {
+          return key;
+        }
+      }
     }
   }
 }]);

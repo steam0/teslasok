@@ -4,10 +4,11 @@ myApp.controller('DetailsController', ['$cookies', '$window', '$scope', '$rootSc
     $scope.search = $location.search();
     $scope.search.titleStatus = $scope.search.titleStatus.toLowerCase();
     $scope.search.country = "NO";
+    $scope.sortType = 'Description';
     $scope.imageUrls = [];
     $scope.params = SearchParamService.getParams();
 
-    $http.get('json/options.json').then(function(response) {
+    $http.get('json/options_EN.json').then(function(response) {
       $scope.optionCodes = response.data.tesla.configSetPrices.options;
       console.log($scope.optionCodes);
     });
@@ -51,11 +52,7 @@ myApp.controller('DetailsController', ['$cookies', '$window', '$scope', '$rootSc
     };
 
     $scope.getKey = function (object, value) {
-      for (var key in object) {
-        if (object[key] === value) {
-          return key;
-        }
-      }
+      return SearchParamService.getKey(object, value);
     };
 
 }]);

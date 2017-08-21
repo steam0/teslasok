@@ -19,14 +19,14 @@
         <div class="panel-heading">
           <h2>{{getKey(params.models, car.Model)}} {{car.Badge}}</h2>
         </div>
-        <div class="panel-body text-center">
+        <!--<div class="panel-body text-center">
           <p><strong>$300 / Month*</strong></p>
-        </div>
+        </div>-->
 
         <ul class="list-group text-center">
           <li class="list-group-item">{{car.Vin}}</li>
-          <li class="list-group-item">{{(car.UsedVehiclePrice+car.Discount) | number}} kr</li>
-          <li class="list-group-item">-{{car.Discount | number}} kr</li>
+          <li class="list-group-item" ng-show="car.Discount">{{(car.UsedVehiclePrice+car.Discount) | number}} kr</li>
+          <li class="list-group-item" ng-show="car.Discount">-{{car.Discount | number}} kr</li>
           <li class="list-group-item">{{car.Odometer | number}} {{car.OdometerType}}</li>
           <li class="list-group-item"><h4>{{car.UsedVehiclePrice | number}} kr</h4></li>
         </ul>
@@ -40,13 +40,13 @@
 
   <div class="row">
 
-    <div class="col-md-5">
+    <div class="col-md-6">
       <div ng-repeat="url in imageUrls">
         <img src="{{url}}" class="img-responsive center-block"></a>
       </div>
     </div>
 
-    <div class="col-md-5">
+    <div class="col-md-4">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -55,7 +55,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="optionCode in car.OptionCodeList">
+          <tr ng-repeat="optionCode in car.OptionCodeList" ng-show="getOptionCodeDescription(optionCode)||showAllDetails">
             <td>
                 {{optionCode}}
             </td>
@@ -65,6 +65,7 @@
           </tr>
         </tbody>
       </table>
+      <a class="btn btn-lg btn-block btn-info" href="" ng-click="showAllDetails=!showAllDetails">Show all option codes</a>
     </div>
   </div>
 </div>

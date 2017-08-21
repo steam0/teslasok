@@ -30,7 +30,7 @@
         <tbody>
           <tr>
             <td>
-              <select ng-model="search.country" ng-options="value as key for (key , value) in params.country" ng-change="update()"></select>
+                <select ng-model="search.country" ng-options="value as key for (key , value) in params.country" ng-change="update()"></select>
             </td>
             <td>
               <select ng-model="search.titleStatus" ng-options="value as key for (key , value) in params.titleStatus" ng-change="update()"></select>
@@ -97,7 +97,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-8">
       <uib-accordion close-others="oneAtATime">
         <div uib-accordion-group class="panel-default" heading="Avansert søk" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
           <p> VIN Filter: </p><input type="text" ng-model="search.vin" ng-change="update()"></input>
@@ -106,9 +106,46 @@
         </div>
       </uib-accordion>
     </div>
+    <div class="col-md-2">
+      <div class="btn-group btn-group-lg" role="group">
+        <button type="button" class="btn btn-default" ng-click="listType = !listType">Full</button>
+        <button type="button" class="btn btn-default" ng-click="listType = !listType">List</button>
+      </div>
+    </div>
   </div>
 
-  <div class="row">
+  <div class="row center-block">
+
+  </div>
+
+
+  <div class="row" ng-repeat="car in cars" ng-show="!listType">
+    <div class="col-md-10">
+      <div class="col-md-8">
+        <a href="" ng-click="showDetails(car)"><img src="{{car.imageUrl}}" class="img-responsive"></a>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="panel panel-info panel-pricing">
+          <div class="panel-heading">
+            <h2>{{getKey(params.models, car.Model)}} {{car.Badge}}</h2>
+          </div>
+          <ul class="list-group text-center">
+            <li class="list-group-item">{{car.Vin}}</li>
+            <li class="list-group-item" ng-show="car.Discount">{{(car.UsedVehiclePrice+car.Discount) | number}} kr</li>
+            <li class="list-group-item" ng-show="car.Discount">-{{car.Discount | number}} kr</li>
+            <li class="list-group-item">{{car.Odometer | number}} {{car.OdometerType}}</li>
+            <li class="list-group-item"><h4>{{car.UsedVehiclePrice | number}} kr</h4></li>
+          </ul>
+
+          <div class="panel-footer">
+              <a class="btn btn-lg btn-block btn-info" href="" ng-click="showDetails(car)">Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" ng-show="listType">
     <div class="col-md-10">
       <table class="table table-striped">
         <thead>
@@ -156,23 +193,22 @@
               </a>
             </th>
             <th>
-              <a href="" ng-click="">
-                Image
-              </a>
+              Details
             </th>
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat="car in cars | orderBy:sortType:sortReverse">
-            <td>{{car.Vin}}</td>
+            <td><a href="" ng-click="showDetails(car)">{{car.Vin}}</a></td>
             <td>{{car.Badge}}</td>
         		<td>{{car.UsedVehiclePrice | number}}</td>
-            <td>{{car.Discount}}</td>
+            <td>{{car.Discount | number}}</td>
         		<td>{{car.Odometer | number}} {{car.OdometerType}}</td>
             <td>{{car.Year}}</td>
-            <td><a href="" ng-click="showDetails(car)"><img src="{{car.imageUrl}}"></a></td>
+            <td><a class="btn btn-md btn-block btn-info" href="" ng-click="showDetails(car)">Details</a></td>
           </tr>
         </tbody>
+      </table>
     </div>
   </div>
 </div>
