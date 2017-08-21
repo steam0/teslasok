@@ -20,7 +20,6 @@ angular.module('myApp', ['ngRoute', 'environment', 'ngResource', 'ngAnimate', 'n
       var filteredCars = [];
       cars.forEach(function (car) {
         if ((car.Badge.indexOf('D') > -1) == dual) {
-          console.log(car.Badge + "?" + dual);
           filteredCars.push(car);
         }
       });

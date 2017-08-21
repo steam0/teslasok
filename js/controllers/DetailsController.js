@@ -18,8 +18,15 @@ myApp.controller('DetailsController', ['$cookies', '$window', '$scope', '$rootSc
 
     });
 
-    $scope.getOptionCodeDescription = function (optionCode) {
-      return $scope.optionCodes[optionCode].name;
+    $scope.getOptionCodeDescription = function (code) {
+      var optionCode = $scope.optionCodes[code];
+
+      if (optionCode !== undefined) {
+        return optionCode.name;
+      } else {
+        return "";
+      }
+
     };
 
 

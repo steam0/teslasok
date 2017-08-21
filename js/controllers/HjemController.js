@@ -22,7 +22,6 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
       "titleStatus": {
           "New": "new",
           "Used": "used",
-          "All": null
       },
       "models": {
           "Model S": "MODEL_S",
@@ -114,7 +113,7 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
       "city": null,
       "state": null,
       "country": "NO",
-      "titleStatus": null
+      "titleStatus": "new"
     };
 
     $scope.update = function () {
@@ -181,9 +180,9 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
         // Filter by dual motor
         if ($scope.filter.dualMotor) {
           if ($scope.filter.dualMotor == 1) {
-              $scope.cars = $filter('badge')($scope.cars, true);
-          } else if ($scope.filter.dualMotor == 2) {
               $scope.cars = $filter('badge')($scope.cars, false);
+          } else if ($scope.filter.dualMotor == 2) {
+              $scope.cars = $filter('badge')($scope.cars, true);
           }
         }
 
