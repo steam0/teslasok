@@ -16,10 +16,47 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
     });
 
     $scope.params = {
-      "models": ["MODEL_S", "MODEL_X", "all"],
-      "exteriors": ["all", "black", "white", "brown", "blue", "grey", "silver", "red"],
-      "batteries": ["all", "60", "70", "75", "85", "90", "100"],
-      "titleStatus": ["new", "used"],
+      "country": {
+        "Norway": "NO"
+      },
+      "titleStatus": {
+          "New": "new",
+          "Used": "used",
+          "All": null
+      },
+      "models": {
+          "Model S": "MODEL_S",
+          "Model X": "MODEL_X",
+          "All": "all"
+      },
+      "exteriors": {
+        "Black": "black",
+        "White": "white",
+        "Brown": "brown",
+        "Blue": "blue",
+        "Gray": "gray",
+        "Silver": "silver",
+        "Red": "red",
+        "All": "all"
+      },
+      "batteries": {
+        "60 kWh": "60",
+        "70 kWh": "70",
+        "75 kWh": "75",
+        "85 kWh": "85",
+        "90 kWh": "90",
+        "100 kWh": "100",
+        "All": "all"
+      },
+      "year": {
+          "2012": 2012,
+          "2013": 2013,
+          "2014": 2014,
+          "2015": 2015,
+          "2016": 2016,
+          "2017": 2017,
+          "All": null
+      },
       "audioPackage": {
         "Standard sound": "AU00",
         "Premium sound": "AU01",
@@ -51,6 +88,11 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
         "Winter package": "CW02",
         "No winter package": "CW00",
         "All": null
+      },
+      "dualMotor": {
+        "2WD": 1,
+        "AWD": 2,
+        "Both": 0
       }
     };
 
@@ -59,7 +101,9 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
       "autopilot": null,
       "premiumPackage": null,
       "freeSupercharging": null,
-      "audioPackage": null
+      "audioPackage": null,
+      "year": null,
+      "dualMotor": 0
     }
 
     $scope.search = {
@@ -70,8 +114,7 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
       "city": null,
       "state": null,
       "country": "NO",
-      "sort": "featured%7Casc",
-      "titleStatus": "new"
+      "titleStatus": null
     };
 
     $scope.update = function () {
@@ -130,6 +173,20 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
           });
         }
 
+        // Filter by year
+        if ($scope.filter.year) {
+          $scope.cars = $filter('filter')($scope.cars, {Year: $scope.filter.year});
+        }
+
+        // Filter by dual motor
+        if ($scope.filter.dualMotor) {
+          if ($scope.filter.dualMotor == 1) {
+              $scope.cars = $filter('badge')($scope.cars, true);
+          } else if ($scope.filter.dualMotor == 2) {
+              $scope.cars = $filter('badge')($scope.cars, false);
+          }
+        }
+
         // Result
         console.log($scope.cars);
       });
@@ -146,7 +203,7 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
     };
 
     $scope.showDetails = function (car) {
-      $location.path('/details').search({"vin": car.Vin, "titleStatus": car.TitleStatus});  
+      $location.path('/details').search({"vin": car.Vin, "titleStatus": car.TitleStatus});
     };
 
 

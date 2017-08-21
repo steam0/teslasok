@@ -13,44 +13,73 @@
 
   <div class="row">
     <div class='col-md-10 alert alert-info'>
-      Welcome to free to use search enginge to look for Tesla Inventory Cars.
+      <p>Welcome to this free to use search enginge to look for Tesla Inventory Cars.</p>
 
-      It takes both time and money to create these tools for you Tesla enthusiasts and if you would ever consider to help us out then
-      please use our referral code: <a href="http://ts.la/henrik3877">http://ts.la/henrik3877</a>
+      <p>It takes both time and money to create these tools for you Tesla enthusiasts and if you would ever consider to help us out then
+      please consider using my referral code: <a href="http://ts.la/henrik3877">http://ts.la/henrik3877</a><p>
     </div>
   </div>
 
   <div class="row">
+    <h2> Basics </h2>
     <div class="col-md-10">
       <table class="table">
         <thead>
           <tr>
+            <th>Country</th>
             <th>New/Used</th>
             <th>Model</th>
+            <th>Year</th>
             <th>Colour</th>
             <th>Battery size</th>
+            <th>Drivetrain<th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <select ng-model="search.country" ng-options="value as key for (key , value) in params.country" ng-change="update()"></select>
+            </td>
+            <td>
+              <select ng-model="search.titleStatus" ng-options="value as key for (key , value) in params.titleStatus" ng-change="update()"></select>
+            </td>
+            <td>
+              <select ng-model="search.model" ng-options="value as key for (key , value) in params.models" ng-change="update()"></select>
+            </td>
+            <td>
+              <select ng-model="filter.year" ng-options="value as key for (key , value) in params.year" ng-change="update()"></select>
+            </td>
+            <td>
+              <select ng-model="search.exteriors" ng-options="value as key for (key , value) in params.exteriors" ng-change="update()"></select>
+            </td>
+            <td>
+              <select ng-model="search.battery" ng-options="value as key for (key , value) in params.batteries" ng-change="update()"></select>
+            </td>
+            <td>
+              <select ng-model="filter.dualMotor" ng-options="value as key for (key , value) in params.dualMotor" ng-change="update()"></select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <h2> Options </h2>
+    <div class="col-md-10">
+      <table class="table">
+        <thead>
+          <tr>
             <th>Audio</th>
             <th>Roof</th>
             <th>Premium package</th>
-            <th>supercharging</th>
+            <th>Supercharging</th>
             <th>Autopilot</th>
             <th>Winter package</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>
-              <select ng-model="search.titleStatus" ng-options="status for status in params.titleStatus" ng-change="update()"></select>
-            </td>
-            <td>
-              <select ng-model="search.model" ng-options="model for model in params.models" ng-change="update()"></select>
-            </td>
-            <td>
-              <select ng-model="search.exteriors" ng-options="exterior for exterior in params.exteriors" ng-change="update()"></select>
-            </td>
-            <td>
-              <select ng-model="search.battery" ng-options="battery for battery in params.batteries" ng-change="update()"></select>
-            </td>
             <td>
               <select ng-model="filter.audioPackage" ng-options="value as key for (key , value) in params.audioPackage" ng-change="update()"></select>
             </td>
@@ -145,9 +174,9 @@
           <tr ng-repeat="car in cars | orderBy:sortType:sortReverse">
             <td>{{car.Vin}}</td>
             <td>{{car.Badge}}</td>
-        		<td>{{car.UsedVehiclePrice}}</td>
+        		<td>{{car.UsedVehiclePrice | number}}</td>
             <td>{{car.Discount}}</td>
-        		<td>{{car.Odometer}} {{car.OdometerType}}</td>
+        		<td>{{car.Odometer | number}} {{car.OdometerType}}</td>
             <td>{{car.Year}}</td>
             <td><a href="" ng-click="showDetails(car)"><img src="{{car.imageUrl}}"></a></td>
           </tr>

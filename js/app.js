@@ -14,4 +14,17 @@ angular.module('myApp', ['ngRoute', 'environment', 'ngResource', 'ngAnimate', 'n
 
       return filteredCars;
     };
+})
+.filter('badge', function() {
+    return function(cars, dual) {
+      var filteredCars = [];
+      cars.forEach(function (car) {
+        if ((car.Badge.indexOf('D') > -1) == dual) {
+          console.log(car.Badge + "?" + dual);
+          filteredCars.push(car);
+        }
+      });
+
+      return filteredCars;
+    };
 });
