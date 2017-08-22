@@ -131,10 +131,12 @@
           </div>
           <ul class="list-group text-center">
             <li class="list-group-item">{{car.Vin}}</li>
+            <li class="list-group-item">{{car.Color}}</li>
+            <li class="list-group-item">{{car.Odometer | number}} {{car.OdometerType}}</li>
             <li class="list-group-item" ng-show="car.Discount">{{(car.UsedVehiclePrice+car.Discount) | number}} kr</li>
             <li class="list-group-item" ng-show="car.Discount">-{{car.Discount | number}} kr</li>
-            <li class="list-group-item">{{car.Odometer | number}} {{car.OdometerType}}</li>
-            <li class="list-group-item"><h4>{{car.UsedVehiclePrice | number}} kr</h4></li>
+            <li class="list-group-item" ng-show="car.TitleStatus=='NEW'">-8000</li>
+            <li class="list-group-item"><h4>{{car.UsedVehiclePrice - car.ReferralDiscount | number}} kr</h4></li>
           </ul>
 
           <div class="panel-footer">
@@ -162,6 +164,13 @@
                 Badge
                 <span ng-show="sortType == 'Badge' && !sortReverse" class="fa fa-caret-down"></span>
                 <span ng-show="sortType == 'Badge' && sortReverse" class="fa fa-caret-up"></span>
+              </a>
+            </th>
+            <th>
+              <a href="" ng-click="sortType = 'Color'; sortReverse = !sortReverse">
+                Color
+                <span ng-show="sortType == 'Color' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'Color' && sortReverse" class="fa fa-caret-up"></span>
               </a>
             </th>
             <th>
@@ -201,7 +210,8 @@
           <tr ng-repeat="car in cars | orderBy:sortType:sortReverse">
             <td><a href="" ng-click="showDetails(car)">{{car.Vin}}</a></td>
             <td>{{car.Badge}}</td>
-        		<td>{{car.UsedVehiclePrice | number}}</td>
+            <td>{{car.Color}}</td>
+        		<td>{{car.UsedVehiclePrice - car.ReferralDiscount | number}}</td>
             <td>{{car.Discount | number}}</td>
         		<td>{{car.Odometer | number}} {{car.OdometerType}}</td>
             <td>{{car.Year}}</td>

@@ -25,10 +25,12 @@
 
         <ul class="list-group text-center">
           <li class="list-group-item">{{car.Vin}}</li>
+          <li class="list-group-item">{{getColor(car.OptionCodeList)}}</li>
+          <li class="list-group-item">{{car.Odometer | number}} {{car.OdometerType}}</li>
           <li class="list-group-item" ng-show="car.Discount">{{(car.UsedVehiclePrice+car.Discount) | number}} kr</li>
           <li class="list-group-item" ng-show="car.Discount">-{{car.Discount | number}} kr</li>
-          <li class="list-group-item">{{car.Odometer | number}} {{car.OdometerType}}</li>
-          <li class="list-group-item"><h4>{{car.UsedVehiclePrice | number}} kr</h4></li>
+          <li class="list-group-item" ng-show="car.TitleStatus=='NEW'">-{{car.ReferralDiscount}} kr <span title="Referral discount if you use our referral code" class="fa fa-exclamation"></span></li>
+          <li class="list-group-item"><h4>{{car.UsedVehiclePrice - car.ReferralDiscount | number}} kr</h4></li>
         </ul>
 
         <div class="panel-footer">

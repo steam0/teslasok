@@ -1,4 +1,4 @@
-myApp.controller('DetailsController', ['$cookies', '$window', '$scope', '$rootScope', '$http', '$timeout', '$location', 'TeslaService', 'SearchParamService', '$log','$sce', '$filter', function ($cookies, $window, $scope, $rootScope, $http, $timeout, $location, TeslaService, SearchParamService, $log, $sce, $filter) {
+myApp.controller('DetailsController', ['$cookies', '$window', '$scope', '$rootScope', '$http', '$timeout', '$location', 'TeslaService', 'SearchParamService', 'OptionCodeService', '$log','$sce', '$filter', function ($cookies, $window, $scope, $rootScope, $http, $timeout, $location, TeslaService, SearchParamService, OptionCodeService, $log, $sce, $filter) {
     $scope.optionCodes = {};
     $scope.car = {}
     $scope.search = $location.search();
@@ -7,10 +7,12 @@ myApp.controller('DetailsController', ['$cookies', '$window', '$scope', '$rootSc
     $scope.sortType = 'Description';
     $scope.imageUrls = [];
     $scope.params = SearchParamService.getParams();
+    OptionCodeService.getOptionCodes().then(function (response) {
+        $scope.options = response.tesla;
+    });
 
     $http.get('json/options_EN.json').then(function(response) {
       $scope.optionCodes = response.data.tesla.configSetPrices.options;
-      console.log($scope.optionCodes);
     });
 
     function generateImageUrls() {
@@ -29,12 +31,29 @@ myApp.controller('DetailsController', ['$cookies', '$window', '$scope', '$rootSc
       // Get image url
       $scope.car.imageUrl = TeslaService.getImageUrl($scope.car, 900, "STUD_SIDE");
 
+      if ($scope.car.TitleStatus == 'NEW') {
+        $scope.car.ReferralDiscount = 8000;
+      }
+
       // Get all images
       $scope.imageUrls = generateImageUrls();
 
       $scope.car.teslaUrl = "https://www.tesla.com/no_NO/"+$scope.car.TitleStatus.toLowerCase()+"/"+$scope.car.Vin
-      console.log($scope.car);
     });
+
+    $scope.getColor = function (optionCodes) {
+      var colors = OptionCodeService.getColors($scope.options);
+      return OptionCodeService.getColorFromOptionCodeList(colors, optionCodes);
+    };
+
+    $scope.getInterior = function (optionCodes) {
+      var interiors = OptionCodeService.getInteriors($scope.options);
+      return OptionCodeService.getInteriorFromOptionCodeList(interiors, optionCodes);
+    };
+
+    $scope.getBattery = function (optionCodes) {
+      var batteries = OptionCodeService.getBatteries($scope.options);
+    };
 
     $scope.getOptionCodeDescription = function (code) {
       var optionCode = $scope.optionCodes[code];

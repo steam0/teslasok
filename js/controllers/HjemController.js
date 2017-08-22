@@ -1,4 +1,4 @@
-myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope', '$http', '$timeout', '$location', 'TeslaService', 'SearchParamService', '$log','$sce', '$filter', function ($cookies, $window, $scope, $rootScope, $http, $timeout, $location, TeslaService, SearchParamService, $log, $sce, $filter) {
+myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope', '$http', '$timeout', '$location', 'TeslaService', 'SearchParamService', 'OptionCodeService', '$log','$sce', '$filter', function ($cookies, $window, $scope, $rootScope, $http, $timeout, $location, TeslaService, SearchParamService, OptionCodeService, $log, $sce, $filter) {
     $scope.hello = "Søk etter din Tesla";
     $scope.rawCar = [];
     $scope.cars = [];
@@ -6,16 +6,12 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
     $scope.sortReverse  = false;  // set the default sort order
     $scope.filterParam   = '';
     $scope.listType = false;
-    
+
     $scope.trustSrc = function(src) {
         return $sce.trustAsResourceUrl($rootScope.hostname);
       }
 
     $scope.optionCodes = {};
-
-    $http.get('json/options.json').then(function(response) {
-      $scope.optionCodes = response.data.tesla.configSetPrices.options;
-    });
 
     $scope.params = SearchParamService.getParams();
 
@@ -47,6 +43,16 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
         // Get image urls
         $scope.cars.forEach(function (car) {
           car.imageUrl = TeslaService.getImageUrl(car);
+
+          // Get car color
+          OptionCodeService.getOptionCodes().then(function (response) {
+              $scope.options = response.tesla;
+              var colors = OptionCodeService.getColors($scope.options);
+              car.Color = OptionCodeService.getColorFromOptionCodeList(colors, car.OptionCodeList);
+              if (car.TitleStatus == 'NEW') {
+                car.ReferralDiscount = 8000;
+              }
+          });
         });
 
         // Filter by Free Supercharging
@@ -121,6 +127,14 @@ myApp.controller('HjemController', ['$cookies', '$window', '$scope', '$rootScope
 
         $scope.cars.forEach(function (car) {
           car.imageUrl = TeslaService.getImageUrl(car);
+          OptionCodeService.getOptionCodes().then(function (response) {
+              $scope.options = response.tesla;
+              var colors = OptionCodeService.getColors($scope.options);
+              car.Color = OptionCodeService.getColorFromOptionCodeList(colors, car.OptionCodeList);
+              if (car.TitleStatus == 'NEW') {
+                car.ReferralDiscount = 8000;
+              }
+          });
         });
       });
     };
